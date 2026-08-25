@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 65% 13%;
+    
+    --primary: 220 65% 13%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 217 98% 51%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --accent: 210 14% 92%;
+    --accent-foreground: 220 65% 13%;
+    
+    --muted: 210 14% 96%;
+    --muted-foreground: 220 20% 40%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 220 65% 13%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 65% 13%;
+    
+    --border: 210 14% 89%;
+    --input: 210 14% 89%;
+    --ring: 217 98% 51%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --highlight: 174 100% 42%;
+    --highlight-foreground: 0 0% 100%;
+    
+    --radius: 0.75rem;
+
+    /* Financial/Market Tokens */
+    --bullish: 142 71% 45%;
+    --bullish-foreground: 0 0% 100%;
+    --bullish-muted: 142 71% 95%;
+    
+    --bearish: 0 84% 60%;
+    --bearish-foreground: 0 0% 100%;
+    --bearish-muted: 0 84% 95%;
+
+    /* Checkout Tokens */
+    --checkout-bg: 210 14% 98%;
+    --checkout-card: 0 0% 100%;
+    --checkout-border: 210 14% 89%;
+    --checkout-success: 142 71% 45%;
+    --checkout-success-foreground: 0 0% 100%;
+    --checkout-error: 0 84% 60%;
+    --checkout-error-foreground: 0 0% 100%;
+  }
+  
+  .dark {
+    --background: 220 65% 10%;
+    --foreground: 0 0% 100%;
+    
+    --primary: 217 98% 51%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 220 50% 20%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --accent: 220 40% 18%;
+    --accent-foreground: 0 0% 100%;
+    
+    --muted: 220 40% 15%;
+    --muted-foreground: 210 14% 70%;
+    
+    --card: 220 50% 12%;
+    --card-foreground: 0 0% 100%;
+    
+    --popover: 220 50% 12%;
+    --popover-foreground: 0 0% 100%;
+    
+    --border: 220 40% 20%;
+    --input: 220 40% 20%;
+    --ring: 217 98% 51%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --highlight: 174 100% 42%;
+    --highlight-foreground: 0 0% 100%;
+
+    /* Financial/Market Tokens */
+    --bullish: 142 60% 45%;
+    --bullish-foreground: 0 0% 100%;
+    --bullish-muted: 142 60% 15%;
+    
+    --bearish: 0 70% 55%;
+    --bearish-foreground: 0 0% 100%;
+    --bearish-muted: 0 70% 15%;
+
+    /* Checkout Tokens */
+    --checkout-bg: 220 65% 8%;
+    --checkout-card: 220 50% 12%;
+    --checkout-border: 220 40% 20%;
+    --checkout-success: 142 71% 45%;
+    --checkout-success-foreground: 0 0% 100%;
+    --checkout-error: 0 84% 60%;
+    --checkout-error-foreground: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section-padding {
+    @apply py-20 lg:py-28;
+  }
+
+  .checkout-container {
+    @apply bg-[hsl(var(--checkout-bg))] min-h-screen py-12;
+  }
+
+  .checkout-card {
+    @apply bg-[hsl(var(--checkout-card))] border border-[hsl(var(--checkout-border))] rounded-2xl shadow-sm p-6 md:p-8;
+  }
+
+  .policy-text {
+    @apply text-sm text-muted-foreground leading-relaxed space-y-4;
+  }
+
+  .market-badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold transition-colors;
+  }
+  .market-badge-bullish {
+    @apply bg-[hsl(var(--bullish-muted))] text-[hsl(var(--bullish))] border border-[hsl(var(--bullish))/20];
+  }
+  .market-badge-bearish {
+    @apply bg-[hsl(var(--bearish-muted))] text-[hsl(var(--bearish))] border border-[hsl(var(--bearish))/20];
+  }
+  .market-badge-neutral {
+    @apply bg-muted text-muted-foreground border border-border;
+  }
+}
+
+@layer utilities {
+  .glow-button {
+    @apply relative overflow-hidden transition-all duration-300;
+  }
+  
+  .glow-button::after {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+    box-shadow: 0 0 20px 0px hsl(217, 98%, 51%, 0.5);
+  }
+  
+  .glow-button:hover::after {
+    @apply opacity-100;
+  }
+
+  @keyframes logoFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .logo-fade-in {
+    animation: logoFadeIn 0.8s ease-out forwards;
+  }
+}
