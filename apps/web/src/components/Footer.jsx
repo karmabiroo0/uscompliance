@@ -44,7 +44,7 @@ function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-secondary shrink-0" />
-                <a href="tel:+12025034781" className="text-primary-foreground/70 hover:text-white transition-colors">(202)&nbsp; 417-8462</a>
+                <a href="tel:+14044654005" className="text-primary-foreground/70 hover:text-white transition-colors">(404) 465-4005</a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-secondary shrink-0" />

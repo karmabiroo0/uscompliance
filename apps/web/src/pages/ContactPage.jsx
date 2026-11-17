@@ -174,7 +174,7 @@ export default function ContactPage() {
                     <div>
                       <h4 className="text-lg font-bold text-foreground">Phone Support</h4>
                       <p className="text-muted-foreground mb-1">Mon-Fri 8am to 6pm EST</p>
-                      <a href="tel:+12025034781" className="text-secondary font-medium hover:underline text-lg">(202) 417-8462</a>
+                      <a href="tel:+14044654005" className="text-secondary font-medium hover:underline text-lg">(404) 465-4005</a>
                     </div>
                   </div>
 
